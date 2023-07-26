@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/foodsListFragment">
+    <fragment
+        android:id="@+id/foodsListFragment"
+        android:name="com.graceful1372.foodappnouri.ui.list.FoodsListFragment"
+        android:label="fragment_foods_list"
+        tools:layout="@layout/fragment_foods_list" >
+
+    </fragment>
+    <action
+        android:id="@+id/action_foodsListFragment_to_foodDetailFragment"
+        app:destination="@id/foodDetailFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    <fragment
+        android:id="@+id/foodDetailFragment"
+        android:name="com.graceful1372.foodappnouri.ui.detail.FoodDetailFragment"
+        android:label="fragment_food_detail"
+        tools:layout="@layout/fragment_food_detail" >
+        <argument
+            android:name="foodId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodsFavoriteFragment"
+        android:name="com.graceful1372.foodappnouri.ui.favorite.FoodsFavoriteFragment"
+        android:label="FoodsFavoriteFragment"
+        tools:layout="@layout/fragment_foods_favorite"/>
+</navigation>
